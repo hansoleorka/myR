@@ -12,7 +12,7 @@
 #' @param Nvmax maximum size of subsets to examine
 #' @return a object of type lm
 #' @details Check function...  
-#' @author Hans Ole {\O}rka \email{hans.ole.orka@@gmail.org}
+#' @author Hans Ole \slash{O}rka \email{hans.ole.orka@@gmail.org}
 
 myLMfitfunction <- function(Xy,Nvmax=5){
   require(leaps)
