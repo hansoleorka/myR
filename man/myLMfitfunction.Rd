@@ -25,6 +25,6 @@ TODO: implement posibility to change VIF value
 Check function...
 }
 \author{
-Hans Ole {\O}rka \email{hans.ole.orka@gmail.org}
+Hans Ole Ørka \email{hans.ole.orka@gmail.org}
 }
 
