@@ -14,7 +14,9 @@
 #' @details Check function...  
 #' @author Hans Ole \slash{O}rka \email{hans.ole.orka@@gmail.org}
 
-myLMfitfunction <- function(Xy,Nvmax=5){
+myLMfitfunction <- function(y,X,Nvmax=5){
+  Xy <- X
+  Xy$y <- y
   require(leaps)
   require(car)
   VIF <- 100
