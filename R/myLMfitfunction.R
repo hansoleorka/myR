@@ -14,7 +14,7 @@
 #' @details Check function...  
 #' @author Hans Ole \slash{O}rka \email{hans.ole.orka@@gmail.org}
 
-myLMfitfunction <- function(y,X,Nvmax=5){
+myLMfitfunction <- function(y,X,Nvmax=5,VIFth=5){
   Xy <- X
   Xy$y <- y
   require(leaps)
@@ -24,7 +24,7 @@ myLMfitfunction <- function(y,X,Nvmax=5){
   reg <- regsubsets(y~.,data=Xy,nvmax=Nvmax,really.big=TRUE)
   summary.out <- summary(reg)
   a <- which.min(summary.out$bic[1:Nvmax])
-  while(VIF>5 & a>0){
+  while(VIF>VIFth & a>0){
     b <- summary.out$which[a,]
     Xsub <- subset(Xy,select=c(names(b)[b][-1],"y"))
     lm1 <- lm(y~.,data=Xsub)
