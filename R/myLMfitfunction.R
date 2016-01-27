@@ -6,10 +6,10 @@
 #' Furthermore, the selection procedure penalized for collinearity using the 
 #' variance inflation factor (VIF). The subset with one variable less are iteratively 
 #' selected if any of the variables in the current subset has a large VIF greater than 5.
-#' TODO: implement posibility to change VIF value 
 #' 
 #' @param Xy data.frame with X variables and the y variable named Xy$y
 #' @param Nvmax maximum size of subsets to examine
+#' @param VIFth VIF threshold for coliniarity default VIFth = 5
 #' @return a object of type lm
 #' @details Check function...  
 #' @author Hans Ole \slash{O}rka \email{hans.ole.orka@@gmail.org}
@@ -19,7 +19,7 @@ myLMfitfunction <- function(y,X,Nvmax=5,VIFth=5){
   Xy$y <- y
   require(leaps)
   require(car)
-  VIF <- 100
+  VIF <- VIFth+100
   lc <- 100
   reg <- regsubsets(y~.,data=Xy,nvmax=Nvmax,really.big=TRUE)
   summary.out <- summary(reg)
