@@ -8,7 +8,7 @@
 #' @details Check function...  
 #' @author Hans Ole {\O}rka \email{hans.ole.orka@@gmail.org}
 bbox2polygon <- function(obj,ID=names(obj)[1]){
-  if(class(obj) == "matrix) {
+  if(class(obj) == "matrix") {
 	bb <- obj
      crs <- NA 
   }	
