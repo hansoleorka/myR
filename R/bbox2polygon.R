@@ -14,7 +14,7 @@ bbox2polygon <- function(obj,ID=names(obj)[1]){
   }	
   if(attr(class(outline),"package") == "sp") {
 	bb <- bbox(obj)
-	crs <- CRS(proj4string(obj)))
+	crs <- CRS(proj4string(obj))
   }
   x <- c(bb[1,1],bb[1,2],bb[1,2],bb[1,1],bb[1,1])
   y <- c(bb[2,1],bb[2,1],bb[2,2],bb[2,2],bb[2,1]) 
