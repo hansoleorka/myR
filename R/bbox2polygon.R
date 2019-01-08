@@ -18,6 +18,8 @@ bbox2polygon <- function(obj,ID=names(obj)[1]){
   }
   x <- c(bb[1,1],bb[1,2],bb[1,2],bb[1,1],bb[1,1])
   y <- c(bb[2,1],bb[2,1],bb[2,2],bb[2,2],bb[2,1]) 
-  SpatialPolygons(list(Polygons(list(Polygon(cbind(x,y))),ID=ID)),proj4string=crs)
+  #SpatialPolygons(list(Polygons(list(Polygon(cbind(x,y))),ID=ID)),proj4string=crs)
+  Srs <- Polygons(list(Polygon(cbind(x,y))),ID=ID)
+  return(Srs)
 }
 
