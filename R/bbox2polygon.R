@@ -12,7 +12,7 @@ bbox2polygon <- function(obj,ID=names(obj)[1]){
 	bb <- obj
      crs <- NA 
   }	
-  if(attr(class(outline),"package") == "sp") {
+  if(attr(class(obj),"package") == "sp") {
 	bb <- bbox(obj)
 	crs <- CRS(proj4string(obj))
   }
